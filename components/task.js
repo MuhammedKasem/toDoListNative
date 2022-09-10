@@ -8,7 +8,7 @@ const Task = (props) => {
         <View style={styles.square}></View>
         <Text style={styles.itemText}>{props.text}</Text>
       </View>
-      <View style={styles.circular}></View>
+      <View style={(props.beingDeleted) ? styles.delete : styles.circular}></View>
     </View>
   )
 }
@@ -47,6 +47,13 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 5,
   },
+  delete: {
+    width: 12,
+    height: 12,
+    borderColor: 'red',
+    borderWidth: 2,
+    borderRadius: 5,
+  }
 })
 
 export default Task;
